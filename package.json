@@ -8,6 +8,7 @@
     "build": "NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && surge -p .",
+    "prestart": "npm install",
     "start": "NODE_ENV=development node server.js"
   },
   "author": "",
@@ -18,7 +19,7 @@
     "normalize.css": "3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "spectacle": "^1.0.0",
+    "spectacle": "~1.0.0",
     "spectacle-code-slide": "^0.1.10",
     "warning": "^2.1.0"
   },
