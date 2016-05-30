@@ -1,0 +1,30 @@
+const $ = require('jquery')
+const client = require('http').client
+require('jquery.cookie')
+
+// myclass.js
+class MyClass {
+  constructor(foo, bar) {
+
+  }
+}
+
+module.exports = MyClass
+
+const SomeClass = require('myclass') // ?
+
+// helpers.js
+module.exports.cutUrl = url => {...}
+module.exports.MIN_WIDTH = 180
+
+
+const helpers = require('helpers')
+helpers.cutUrl('https://google.com')
+console.log(helpers.MIN_WIDTH)
+
+
+const User = require('user')
+
+const width = require('settings').WIDTH
+
+require('server').run(9000)

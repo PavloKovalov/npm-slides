@@ -40,6 +40,7 @@ const theme = createTheme({
 
 const code = {
   npmInit: require('raw!../assets/npm_init.example'),
+  commonJS: require('raw!../assets/commonjs.example'),
   'package.json': require('raw!../package.json'),
 }
 
@@ -113,6 +114,30 @@ export default class Presentation extends React.Component {
             Before ES2015
           </Heading>
         </Slide>
+        <CodeSlide
+          transition={["slide"]}
+          lang="js"
+          code={code.commonJS}
+          ranges={[
+            { loc: [0, 0], title: "CommonJs modules" },
+            { loc: [0, 3], note: "Different `require` styles" },
+            { loc: [0, 1], note: "Require a whole module" },
+            { loc: [1, 2], note: "Require an attribute of module" },
+            { loc: [2, 3], note: "Require module to current context" },
+
+            { loc: [4, 12], note: "Export from module" },
+            { loc: [13, 14], note: "Export object from module" },
+
+            { loc: [15, 18], note: "Set modules attribute" },
+            { loc: [21, 23], note: "Require module and use their attributes" },
+
+            /* ensure understanding */
+            { loc: [25, 26], note: "How module.exports looks like?" },
+            { loc: [27, 28], note: "How module.exports looks like?" },
+            { loc: [29, 30], note: "How module.exports looks like?" },
+
+          ]}
+        />
 
         </Deck>
       </Spectacle>
