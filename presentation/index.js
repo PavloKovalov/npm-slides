@@ -17,8 +17,6 @@ import {
 
 import CodeSlide from "spectacle-code-slide"
 
-import preloader from "spectacle/lib/utils/preloader"
-
 // Import theme
 import createTheme from "spectacle/lib/themes/default"
 
@@ -26,10 +24,6 @@ import createTheme from "spectacle/lib/themes/default"
 require("normalize.css")
 require("spectacle/lib/themes/default/index.css")
 
-
-const images = {}
-
-preloader(images)
 
 const theme = createTheme({
   primary: "#122b45",
@@ -41,6 +35,7 @@ const theme = createTheme({
 const code = {
   npmInit: require('raw!../assets/npm_init.example'),
   commonJS: require('raw!../assets/commonjs.example'),
+  esModules: require('raw!../assets/es6_modules.example'),
   'package.json': require('raw!../package.json'),
 }
 
@@ -135,6 +130,27 @@ export default class Presentation extends React.Component {
             { loc: [25, 26], note: "How module.exports looks like?" },
             { loc: [27, 28], note: "How module.exports looks like?" },
             { loc: [29, 30], note: "How module.exports looks like?" },
+
+          ]}
+        />
+        <CodeSlide
+          transition={["slide"]}
+          lang="js"
+          code={code.esModules}
+          ranges={[
+            { loc: [0, 0], title: "ES2015 modules" },
+            { loc: [0, 11], note: "Module declare things to to export" },
+            { loc: [3, 4], note: "Default export" },
+            { loc: [4, 11], note: "Named exports" },
+
+            { loc: [13, 14], note: "Import default and one named" },
+            { loc: [15, 16], note: "It's posible to rename default and named exports" },
+
+            { loc: [18, 21], note: "Import only named exports" },
+            { loc: [22, 25], note: "Import all named exports as object" },
+
+            { loc: [26, 27], note: ". means local import" },
+            { loc: [27, 28], note: ".. import from parent directory" },
 
           ]}
         />

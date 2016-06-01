@@ -1,0 +1,28 @@
+//------ lib.js ------
+const ANSWER = 42
+
+export default ANSWER
+export const sqrt = Math.sqrt
+export function square(x) {
+  return x * x
+}
+export function sum(x, y) {
+  return x + y
+}
+
+//------ somefile.js ------
+import ANSWER, { sum } from 'lib'
+
+import myAnswer, { sum as mySum } from 'lib'
+
+//------ main.js ------
+import { sum, diag } from 'lib'
+console.log(square(11)) // 121
+console.log(sum(4, 3)) // 5
+
+import * as lib from 'lib'
+console.log(lib.square(11)) // 121
+console.log(lib.sum(4, 3)) // 5
+
+import something from './my/lib'
+import somethingElse from '../parent/lib.js'
